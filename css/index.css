@@ -1,0 +1,70 @@
+body {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  width: 100%;
+}
+
+.container {
+  width: 1150px;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+}
+
+.blog__app-title {
+  padding: 50px;
+  font-size: 40px;
+  color: #4e41b1;
+  text-align: center;
+}
+
+.entery__field {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.title__text {
+  font-size: 35px;
+  line-height: 48px;
+  color: #5a4040;
+}
+
+.title-input {
+  width: 500px;
+  height: 60px;
+  border-radius: 5px;
+  font-size: 40px;
+}
+
+.new-post-btn {
+  font-family: inherit;
+  width: 500px;
+  height: 60px;
+  background-color: #0094ff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.new-post-btn:hover {
+  opacity: 0.5;
+  background-color: #1ec532;
+  transition: 0.5s;
+}
+
+.btn__text {
+  font-size: 32px;
+  line-height: 39px;
+  color: #ffffff;
+}
+
+.posts__section {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
