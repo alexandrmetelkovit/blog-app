@@ -7,6 +7,10 @@ const newPostBtnNode = document.querySelector('.js-new-post-btn');
 const postsNode = document.querySelector('.js-posts');
 
 newPostBtnNode.addEventListener('click', function() { // addEventListener - обработчик события . обратботка события (клик)
+
+    // получить данные из поля ввода
+
+    // сохранить пост
     postTitle= titleInputNode.value;
 
     postsNode.innerText = postTitle;
