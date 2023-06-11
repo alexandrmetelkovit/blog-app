@@ -2,6 +2,7 @@ body {
   font-family: "Inter", sans-serif;
   font-weight: 700;
   width: 100%;
+background-color: #e2eff0;
 }
 
 .container {
@@ -26,6 +27,9 @@ body {
   display: flex;
   flex-direction: column;
   gap: 30px;
+  border: #1a48c8 solid 15px;
+  padding: 15px;
+  border-radius: 30px;
 }
 
 .title__text {
@@ -35,8 +39,19 @@ body {
   margin-bottom: 20px ;
 }
 
+.validationMessage_hidden {
+  display: none;
+}
+
 .post {
     margin-bottom: 50px;
+}
+
+.post__output {
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 39px;
+  color: #979797;
 }
 
 .post-title-input {
@@ -58,6 +73,10 @@ body {
   height: 250px;
   border-radius: 5px;
   font-size: 40px;
+}
+
+textarea {
+  resize: none;
 }
 
 .post__text {
@@ -89,8 +108,16 @@ body {
   color: #ffffff;
 }
 
+.validationMessage {
+  font-size: 18px;
+  color: #ff0000;
+}
+
+
 .posts__section {
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
+
+

@@ -14,26 +14,28 @@
 </head>
 
 <body>
-    <div class="container">
-        <h1 class="blog__app-title">Приложение "Блог"</h1>
+    <h1 class="blog__app-title">Приложение "Блог"</h1>
 
+    <div class="container">
         <div class="row">
             <div class="entery__field">
                 <h2 class="title__text">Новый пост</h2>
 
-                <input class="js-post-title-input post-title-input" type="text" />
+                <input class="js-post-title-input post-title-input" placeholder="Заголовок" type="text" />
 
-                <input class="js-post-text-input post-text-input" type="text">
+                <textarea class="js-post-text-input post-text-input" placeholder="Напиши пост" type="text"></textarea>
 
                 <button class="js-new-post-btn new-post-btn">
                     <p class="btn__text">Опубликовать</p>
                 </button>
+
+                <div id="validationMessage" class="validationMessage validationMessage_hidden"></div>
             </div>
             <div class="posts__section">
                 <h2 class="title__text">Лента</h2>
 
                 <div class="js-posts posts">
-                    <p class="post__output">Лента пустая</p>
+                    <p class="post__output">Лента пуста...</p>
                 </div>
             </div>
         </div>
