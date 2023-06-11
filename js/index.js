@@ -1,39 +1,70 @@
 // объявление переменной
-let post = '';
+const posts = [];
 
 
-const titleInputNode = document.querySelector('.js-title-input'); // doc.query - вытаскивает класс из хтмл для работы в js
-const newPostBtnNode = document.querySelector('.js-new-post-btn');
-const postsNode = document.querySelector('.js-posts');
+const postTitleInputNode = document.querySelector(".js-post-title-input"); // doc.query - вытаскивает класс из хтмл для работы в js
+const postTextInputNode = document.querySelector(".js-post-text-input");
+const newPostBtnNode = document.querySelector(".js-new-post-btn");
+const postsNode = document.querySelector(".js-posts");
 
-newPostBtnNode.addEventListener('click', function() { // addEventListener - обработчик события . обратботка события (клик)
+ let now = new Date();
+ console.log(now)
 
-    // получить данные из поля ввода
-    const postFromUser = getPostFromUser();
 
-    setPost(postFromUser);
+newPostBtnNode.addEventListener("click", function () {
+  // addEventListener - обработчик события . обратботка события (клик)
 
-    renderPost();
+  // получить данные из поля ввода
+  const postFromUser = getPostFromUser();
 
-    // сохранить пост
+  addPost(postFromUser);
 
-    // отобразить пост
+  renderPosts();
 
-    postTitle = titleInputNode.value; // вывод равен введенному тексту в input
+  // сохранить пост
 
-    postsNode.innerText = postTitle;
+  // отобразить пост
+
+  // postTitle = postTitleInputNode.value; // вывод равен введенному тексту в input
+
+  // postsNode.innerText = postTitle;
 });
 
 function getPostFromUser() {
-    const post = titleInputNode.value;
+  const title = postTitleInputNode.value;
+  const text = postTextInputNode.value;
 
-    return post;
-};
 
-function setPost(newPost) {
-    post = newPost;
-};
+  return {
+    title: title,
+    text: text,
+  };
+}
 
-function renderPost() {
-    postsNode.innerText = post;
+function addPost({ title, text }) {
+  posts.push({
+    title: title,
+    text: text,
+  });
+}
+
+function getPost() {
+  return posts;
+
+}
+
+function renderPosts() {
+  const posts = getPost();
+
+  let postsHTML = "";
+  posts.forEach((post) => {
+    postsHTML += `
+        <div class = 'post'>
+        <p class = 'post__title'>${post.title}</p>
+        <p class = 'post__text'>${post.text}</p>
+        </div>
+    `;
+  });
+
+  postsNode.innerHTML = postsHTML;
 }
