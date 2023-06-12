@@ -32,6 +32,13 @@ background-color: #e2eff0;
   border-radius: 30px;
 }
 
+.post__date {
+  font-size: 25px;
+line-height: 30px;
+color: #2292c9;
+margin-bottom: 15px;
+}
+
 .title__text {
   font-size: 35px;
   line-height: 48px;

@@ -84,6 +84,7 @@ function validation() {
   validationMessage.classList.add("validationMessage_hidden");
 }
 
+
 function getPostFromUser() {
   const title = postTitleInputNode.value;
   const text = postTextInputNode.value;
@@ -95,9 +96,13 @@ function getPostFromUser() {
 }
 
 function addPost({ title, text }) {
+  const currentDate = new Date();
+  const dt = `${currentDate.getDate()}.${currentDate.getMonth()}.${currentDate.getFullYear()}, ${currentDate.getHours()}:${currentDate.getMinutes()}`
+
   posts.push({
-    title: title,
-    text: text,
+    dt,
+   title,
+   text,
   });
 }
 
@@ -112,6 +117,7 @@ function renderPosts() {
   posts.forEach((post) => {
     postsHTML += `
         <div class = 'post'>
+        <p class = 'post__date'>${post.dt}</p>
         <p class = 'post__title'>${post.title}</p>
         <p class = 'post__text'>${post.text}</p>
         </div>
