@@ -2,7 +2,7 @@ body {
   font-family: "Inter", sans-serif;
   font-weight: 700;
   width: 100%;
-background-color: #e2eff0;
+  background-color: #e2eff0;
 }
 
 .container {
@@ -12,7 +12,6 @@ background-color: #e2eff0;
 
 .row {
   display: flex;
-  flex-direction: row;
   gap: 100px;
 }
 
@@ -23,27 +22,27 @@ background-color: #e2eff0;
   text-align: center;
 }
 
-.entery__field {
+.col__new-post{
   display: flex;
   flex-direction: column;
   gap: 30px;
-  border: #1a48c8 solid 15px;
+  border: #1a48c8 solid 10px;
   padding: 15px;
   border-radius: 30px;
 }
 
 .post__date {
   font-size: 25px;
-line-height: 30px;
-color: #2292c9;
-margin-bottom: 15px;
+  line-height: 30px;
+  color: #2292c9;
+  margin-bottom: 15px;
 }
 
 .title__text {
   font-size: 35px;
   line-height: 48px;
   color: #5a4040;
-  margin-bottom: 20px ;
+  margin-bottom: 20px;
 }
 
 .validationMessage_hidden {
@@ -51,7 +50,7 @@ margin-bottom: 15px;
 }
 
 .post {
-    margin-bottom: 50px;
+  margin-bottom: 50px;
 }
 
 .post__output {
@@ -66,6 +65,7 @@ margin-bottom: 15px;
   height: 60px;
   border-radius: 5px;
   font-size: 40px;
+  padding: 15px;
 }
 
 .post__title {
@@ -80,6 +80,7 @@ margin-bottom: 15px;
   height: 250px;
   border-radius: 5px;
   font-size: 40px;
+  padding: 15px;
 }
 
 textarea {
@@ -120,11 +121,8 @@ textarea {
   color: #ff0000;
 }
 
-
-.posts__section {
+.col__posts {
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
-
-
