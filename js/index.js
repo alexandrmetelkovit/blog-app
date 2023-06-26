@@ -122,56 +122,69 @@
 //   postsNode.innerHTML = postsHTML;
 // }
 
-const posts = [];
 
-const postTitleInputNode = document.querySelector(".js-post-title-input");
-const postTextInputNode = document.querySelector(".js-post-text-input");
-const newPostBtnNode = document.querySelector(".js-new-post-btn");
-const postNode = document.querySelector(".js-posts");
+let post = {
+  title: '',
+  text: ''
+};
 
-newPostBtnNode.addEventListener("click", function () {
+ const postTitleInputNode = document.querySelector('.js-post__title__input');
+ const postTextInputNode = document.querySelector('.js-post__text__input');
+ const newPostBtnNode = document.querySelector('.js-new_post_btn ');
+ const postsNode = document.querySelector('.js-posts');
+
+
+
+ newPostBtnNode.addEventListener('click', function() {
+
+ // получить пост от пользователя
   const postFromUser = getPostFromUser();
 
-  addPost(postFromUser); // сохраняем пост
+  //вызов (присваиваем значение, которое ввел пользователь "post")
+  setPost(postFromUser);
 
-  renderPosts();
-});
+//отображение поста
+  renderPost();
+ });
 
-function getPostFromUser() {
-  //получаем данные через инпут
-  const title = postTitleInputNode.value;
-  const text = postTextInputNode.value;
+ // получить пост от пользователя
+ function getPostFromUser() { 
 
+  //Обрабатываем ввод заголовка и описания
+  const title = postTitleInputNode.value;  // получаем заголовок из поля ввода заголовка
+  const text = postTextInputNode.value; // получаем описание из поля ввода напиши текст
+
+  // возвращаем объект из title и text
   return {
-    title: title,
-    text: text,
-  };
-}
-
-function addPost({ title, text }) {
-  posts.push({
     title,
-    text,
-  });
-}
+    text
+  };
+ }
+ 
+//установить пост ..  //сохранить пост
+ function setPost(newPost) { 
+  post = newPost;
+ }
 
-function getPosts() {
-  return posts;
-}
+ function getPost() {
+  return post;
+ }
 
-function renderPosts() {
-  const posts = getPosts();
+//отображение одного поста
+ function renderPost() {
+  // складываем внутрь HTML
+  // postsNode.innerText = post; 
 
-  let postsHTML = '';
+  const post = getPost();
+  // формирование ХТМЛ через шаблонные строки внутри js 
+  const postHTML = `
+  <div class ='post'>
+  <p class='post__title'>${post.title}</p>
+  <p class='post__text'>${post.text}</p>
+  </div>
+  `;
 
-  posts.forEach(post => {
-    postsHTML += `
-      <div class='post'>
-        <p class='post__title'>${post.title}</p>
-        <p class='post__text'>${post.text}</p>
-      </div>
-      `;
-  });
+  postsNode.innerHTML = postHTML;
+ }
 
-  postNode.innerHTML = postsHTML;
-}
+

@@ -7,6 +7,8 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
 
+    <link rel="icon" href="resources/text.png" type="image/x-icon" />
+
     <title>blog-app</title>
 
     <link rel="stylesheet" href="css/reset.css" />
@@ -14,28 +16,20 @@
 </head>
 
 <body>
-    <h1 class="blog__app-title">Приложение "Блог"</h1>
-
     <div class="container">
         <div class="row">
-            <div class="col__new-post">
-                <h2 class="title__text">Новый пост</h2>
-
-                <input class="js-post-title-input post-title-input" placeholder="Заголовок" type="text" />
-
-                <textarea class="js-post-text-input post-text-input" placeholder="Напиши пост" type="text"></textarea>
-
-                <button class="js-new-post-btn new-post-btn">
-                    <p class="btn__text">Опубликовать</p>
+            <div class="col__left">
+                <h2 class="title__blog">Новый пост</h2>
+                <input class="js-post__title__input post__title__input" placeholder="Заголовок" type="text" />
+                <input class="js-post__text__input post__text__input" placeholder="Напиши пост" type="text" />
+                <button class="js-new_post_btn new_post_btn">
+                    <p class="text__btn">Опубликовать</p>
                 </button>
-
-                <div class="validationMessage validationMessage_hidden"></div>
             </div>
-            <div class="col__posts">
-                <h2 class="title__text">Лента</h2>
-
-                <div class="js-posts posts">
-                    <p class="post__output">Лента пуста...</p>
+            <div class="col__right">
+                <h2 class="title__blog">Лента</h2>
+                <div class="js-posts posts title__blog">
+                    Тут пока пусто...
                 </div>
             </div>
         </div>

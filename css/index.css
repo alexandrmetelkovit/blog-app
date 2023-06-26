@@ -1,8 +1,14 @@
 body {
+  width: 100%;
   font-family: "Inter", sans-serif;
   font-weight: 700;
-  width: 100%;
   background-color: #e2eff0;
+}
+
+.blog__title {
+  font-size: 40px;
+  color: #000;
+  font-weight: 700;
 }
 
 .container {
@@ -10,119 +16,79 @@ body {
   margin: 0 auto;
 }
 
+.title__blog {
+  font-size: 40px;
+  line-height: 48px;
+}
+
 .row {
+  padding: 50px;
   display: flex;
+  justify-content: center;
   gap: 100px;
 }
 
-.blog__app-title {
-  padding: 50px;
-  font-size: 40px;
-  color: #4e41b1;
-  text-align: center;
-}
-
-.col__new-post{
+.col__left {
   display: flex;
   flex-direction: column;
   gap: 30px;
-  border: #1a48c8 solid 10px;
-  padding: 15px;
-  border-radius: 30px;
 }
 
-.post__date {
-  font-size: 25px;
-  line-height: 30px;
-  color: #2292c9;
-  margin-bottom: 15px;
-}
-
-.title__text {
-  font-size: 35px;
-  line-height: 48px;
-  color: #5a4040;
-  margin-bottom: 20px;
-}
-
-.validationMessage_hidden {
-  display: none;
-}
-
-.post {
-  margin-bottom: 50px;
-}
-
-.post__output {
-  font-weight: 400;
+.post__title__input,
+.post__text__input {
+  font-family: inherit;
+  width: 500px;
+  height: 60px;
+  padding: 10px;
   font-size: 32px;
+  line-height: 39px;
+  font-weight: 400;
+  color: #979797;
+}
+
+.post__text__input {
+  height: 250px;
+}
+
+.new_post_btn {
+  font-family: inherit;
+  width: 500px;
+  height: 60px;
+  border-radius: 7px;
+  border: none;
+  background-color: #0094ff;
+}
+
+.text__btn {
+  font-size: 32px;
+  line-height: 39px;
+  font-weight: 400;
+  color: #fff;
+}
+
+.col__right {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.posts {
+  font-size: 32px;
+  font-weight: 400;
   line-height: 39px;
   color: #979797;
 }
 
-.post-title-input {
-  width: 500px;
-  height: 60px;
-  border-radius: 5px;
-  font-size: 40px;
-  padding: 15px;
-}
-
 .post__title {
-  font-size: 32px;
-  line-height: 39px;
-  color: #000000;
   margin-bottom: 15px;
-}
-
-.post-text-input {
-  width: 500px;
-  height: 250px;
-  border-radius: 5px;
-  font-size: 40px;
-  padding: 15px;
-}
-
-textarea {
-  resize: none;
-}
-
-.post__text {
-  font-weight: 400;
-  font-size: 25px;
-  line-height: 30px;
-  color: #000000;
-}
-
-.new-post-btn {
-  font-family: inherit;
-  width: 500px;
-  height: 60px;
-  background-color: #0094ff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.new-post-btn:hover {
-  opacity: 0.5;
-  background-color: #1ec532;
-  transition: 0.5s;
-}
-
-.btn__text {
   font-size: 32px;
   line-height: 39px;
-  color: #ffffff;
+  font-weight: 700;
+  color: #000;
 }
-
-.validationMessage {
-  font-size: 18px;
-  color: #ff0000;
-}
-
-.col__posts {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
+.post__text {
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 30px;
+  color: #000;
 }
