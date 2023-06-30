@@ -58,8 +58,11 @@ resetPost()
  }
  
 //добавление в массив
- function addPost({title, text}) { 
+ function addPost({ date, title, text }) { 
 
+  if (!title || !text)  return;
+
+  resetPost();
 
   posts.push({
     date: `${getDate()}`,
