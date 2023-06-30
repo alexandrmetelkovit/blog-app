@@ -43,26 +43,41 @@ body {
   font-size: 32px;
   line-height: 39px;
   font-weight: 400;
-  color: #979797;
 }
 
 .post__text__input {
+  width: 500px;
   height: 250px;
 }
 
-.new_post_btn {
+.new_post_btn,
+.reset_post_btn {
   font-family: inherit;
   width: 500px;
   height: 60px;
   border-radius: 7px;
   border: none;
   background-color: #0094ff;
+  cursor: pointer;
+}
+
+.reset_post_btn {
+  background-color: red;
+}
+
+.new_post_btn:hover,
+.reset_post_btn:hover {
+  opacity: 0.7;
 }
 
 .text__btn {
   font-size: 32px;
   line-height: 39px;
   font-weight: 400;
+  color: #fff;
+}
+
+.text__btn_red {
   color: #fff;
 }
 
@@ -79,6 +94,12 @@ body {
   color: #979797;
 }
 
+.post__date {
+  font-size: 25px;
+  font-weight: 400;
+  color: #0094ff;
+}
+
 .post__title {
   margin-bottom: 15px;
   font-size: 32px;
@@ -91,4 +112,16 @@ body {
   font-weight: 400;
   line-height: 30px;
   color: #000;
+}
+
+.post {
+  margin-bottom: 20px;
+}
+
+.post__title__symbols,
+.post__text__symbols {
+  display: none;
+  color: #f00;
+  font-size: 25px;
+  font-weight: 400;
 }
