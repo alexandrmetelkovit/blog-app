@@ -50,8 +50,10 @@ body {
   height: 250px;
 }
 
-.new_post_btn,
-.reset_post_btn {
+.new__post__btn,
+.reset__post__btn,
+.reset__blog__btn {
+  margin: 0 auto;
   font-family: inherit;
   width: 500px;
   height: 60px;
@@ -61,12 +63,17 @@ body {
   cursor: pointer;
 }
 
-.reset_post_btn {
+.reset__post__btn {
   background-color: red;
 }
 
-.new_post_btn:hover,
-.reset_post_btn:hover {
+.reset__blog__btn {
+  background-color: rgb(214, 177, 43);
+}
+
+.new__post__btn:hover,
+.reset__post__btn:hover,
+.reset__blog__btn:hover {
   opacity: 0.7;
 }
 
