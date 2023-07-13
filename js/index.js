@@ -2,8 +2,9 @@ const posts = [];
 
 const date = new Date();
 
-const symbolTitleLimit = 50;
-const symbolTextLimit = 100;
+const symbolTitleLimit = 'Заголовок больше 50 символов';
+const symbolTextLimit = 'Пост больше 100 символов';
+
 
 const postTitleInputNode = document.querySelector(".js-post__title__input");
 const postTextInputNode = document.querySelector(".js-post__text__input");
@@ -25,6 +26,7 @@ newPostBtnNode.addEventListener("click", function () {
 
   //отображение поста
   renderPosts();
+
 });
 
 resetPostBtnNode.addEventListener("click", function () {
@@ -41,12 +43,11 @@ resetBlogBtnNode.addEventListener("click", function () {
 });
 
 function resetBlog() {
-  let test = document.querySelectorAll('.posts'); 
+  let resetPost = document.querySelectorAll('.js-posts'); 
 
-  for( let i = 0; i < test.length; i++ ){
-    test[i].outerHTML = "";
+  for( let i = 0; i < resetPost.length; i++ ){
+    resetPost[i].outerHTML = '';
   }
-
 }
 
 // получить пост от пользователя
@@ -61,10 +62,10 @@ function getPostFromUser() {
     text,
   };
 }
-
 //добавление в массив
 function addPost({ title, text }) {
-  if (!title || !text) return;
+
+  if (!title || !text) return ;
 
   resetPost();
 
@@ -73,6 +74,7 @@ function addPost({ title, text }) {
     title,
     text,
   });
+
 }
 
 // получить посты
@@ -104,7 +106,7 @@ function renderPosts() {
 function getDate() {
   const option = {
     year: "numeric",
-    month: "long",
+    month: "numeric",
     day: "numeric",
     hour: "numeric",
     minute: "numeric",
@@ -113,4 +115,11 @@ function getDate() {
   const date = new Date().toLocaleString("ru", option);
 
   return date;
+}
+
+function getLimit() {
+
+  if (postTitleInputNode.value.length > 50) return symbolTitleLimit
+  if (postTextInputNode.value.length > 100) return symbolTextLimit
+  
 }
