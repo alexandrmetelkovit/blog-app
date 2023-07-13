@@ -214,7 +214,7 @@ body {
 
   .post__title__input,
   .post__text__input {
-    width: 320px;
+    max-width: 320px;
     height: 50px;
     padding: 5px;
     font-size: 20px;

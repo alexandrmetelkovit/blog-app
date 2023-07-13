@@ -1,20 +1,14 @@
 const posts = [];
 
-const date = new Date();
-
 const symbolTitleLimit = 'Заголовок больше 50 символов';
 const symbolTextLimit = 'Пост больше 100 символов';
-
 
 const postTitleInputNode = document.querySelector(".js-post__title__input");
 const postTextInputNode = document.querySelector(".js-post__text__input");
 const newPostBtnNode = document.querySelector(".js-new__post__btn");
+const postsNode = document.querySelector(".js-posts");
 const resetPostBtnNode = document.querySelector(".js-reset__post__btn");
 const resetBlogBtnNode = document.querySelector(".js-reset__blog__btn");
-const postsNode = document.querySelector(".js-posts");
-
-const postTitleSymbols = document.querySelector(".js-post__title__symbols");
-const postTextSymbols = document.querySelector(".js-post__text__symbols");
 
 // по клику кнопки будет срабатывать (обработчик события)
 newPostBtnNode.addEventListener("click", function () {
@@ -22,13 +16,14 @@ newPostBtnNode.addEventListener("click", function () {
   const postFromUser = getPostFromUser();
 
   //вызов (присваиваем значение, которое ввел пользователь "post")
-  addPost(postFromUser);
+  addPost(postFromUser); //этот метод добавит новый пост в массив (но еще не отобразит на странице)
 
   //отображение поста
   renderPosts();
 
 });
 
+//по клику кнопки - вывод пустого поста
 resetPostBtnNode.addEventListener("click", function () {
   resetPost();
 });
@@ -38,8 +33,9 @@ function resetPost() {
   postTextInputNode.value = "";
 }
 
+// по клику кнопки - удаляются посты
 resetBlogBtnNode.addEventListener("click", function () {
-  resetBlog()
+  resetBlog();
 });
 
 function resetBlog() {
@@ -63,7 +59,7 @@ function getPostFromUser() {
   };
 }
 //добавление в массив
-function addPost({ title, text }) {
+function addPost({ date, title, text }) {
 
   if (!title || !text) return ;
 
@@ -85,7 +81,6 @@ function getPosts() {
 //отображение одного поста
 function renderPosts() {
   const posts = getPosts();
-
   // формирование ХТМЛ через шаблонные строки внутри js
   let postsHTML = "";
 
@@ -101,6 +96,7 @@ function renderPosts() {
   });
 
   postsNode.innerHTML = postsHTML;
+
 }
 
 function getDate() {
@@ -115,11 +111,4 @@ function getDate() {
   const date = new Date().toLocaleString("ru", option);
 
   return date;
-}
-
-function getLimit() {
-
-  if (postTitleInputNode.value.length > 50) return symbolTitleLimit
-  if (postTextInputNode.value.length > 100) return symbolTextLimit
-  
 }
