@@ -7,7 +7,7 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
 
-    <link rel="icon" href="resources/text.png" type="image/x-icon" />
+    <link rel="icon" href="resources/text.png" type="image/png" />
 
     <title>blog-app</title>
 
@@ -20,23 +20,30 @@
         <div class="row">
             <div class="col__left">
                 <h2 class="title__blog">Новый пост</h2>
+
                 <input class="js-post__title__input post__title__input" placeholder="Заголовок" type="text" />
 
                 <textarea class="js-post__text__input post__text__input" placeholder="Напиши пост"
                     type="text"></textarea>
 
+                <div class="js-validationMessage validationMessage__hidden"></div>
+
                 <button class="js-new__post__btn new__post__btn">
                     <p class="text__btn">Опубликовать</p>
                 </button>
+
                 <button class="js-reset__post__btn reset__post__btn">
                     <p class="text__btn">Очистить заготовку</p>
                 </button>
+
                 <button class="js-reset__blog__btn reset__blog__btn">
                     <p class="text__btn">Очистить ленту</p>
                 </button>
             </div>
+
             <div class="col__right">
                 <h2 class="title__blog">Лента</h2>
+
                 <div class="js-posts posts title__blog">Тут пока пусто...</div>
             </div>
         </div>
