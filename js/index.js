@@ -2,6 +2,8 @@ const posts = [];
 
 const limitTitle = 10;
 const limitText = 20;
+const limitTitletMessage = `Длина заголовка не должна превышать ${limitTitle} символов`
+const limitTextMessage = `Длина поста не должна превышать ${limitText} символов`
 // достаем все нужные нам элементы из htmL
 const postTitleInputNode = document.querySelector(".js-post__title__input");
 const postTextInputNode = document.querySelector(".js-post__text__input");
@@ -27,7 +29,7 @@ function validation() {
 
   if (titleLength > limitTitle) {
     validationMessage.className = "validationMessage";
-    validationMessage.innerText = `Длина заголовка не должна превышать ${limitTitle} символов`;
+    validationMessage.innerText = limitTitletMessage;
     newPostBtnNode.disabled = true;
     return;
   } else {
@@ -37,7 +39,7 @@ function validation() {
 
   if (textLength > limitText) {
     validationMessage.className = "validationMessage";
-    validationMessage.innerText = `Длина поста не должна превышать ${limitText} символов`;
+    validationMessage.innerText = limitTextMessage;
     newPostBtnNode.disabled = true;
     return;
   } else {
