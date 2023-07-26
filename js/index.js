@@ -2,13 +2,12 @@ const posts = [];
 
 const limitTitle = 10;
 const limitText = 20;
-const limitTitletMessage = `Длина заголовка не должна превышать ${limitTitle} символов`
-const limitTextMessage = `Длина поста не должна превышать ${limitText} символов`
+const limitTitletMessage = `Длина заголовка не должна превышать ${limitTitle} символов`;
+const limitTextMessage = `Длина поста не должна превышать ${limitText} символов`;
+
 // достаем все нужные нам элементы из htmL
 const postTitleInputNode = document.querySelector(".js-post__title__input");
 const postTextInputNode = document.querySelector(".js-post__text__input");
-const validationTitle = document.querySelector(".js-validationTitle");
-const validationText = document.querySelector(".js-validationText");
 const validationMessage = document.querySelector(".js-validationMessage");
 const newPostBtnNode = document.querySelector(".js-new__post__btn");
 const resetPostBtnNode = document.querySelector(".js-reset__post__btn");
@@ -66,11 +65,11 @@ function getPostFromUser() {
   const title = postTitleInputNode.value; // получаем заголовок из поля ввода заголовок
   const text = postTextInputNode.value; // получаем описание из поля ввода напиши текст
   if (title === "") {
-    addPostBtnNode.disabled = true;
+    newPostBtnNode.disabled = true;
     return;
   }
   if (text === "") {
-    addPostBtnNode.disabled = true;
+    newPostBtnNode.disabled = true;
     return;
   }
   // возвращаем объект из title и text
