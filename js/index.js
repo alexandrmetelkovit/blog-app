@@ -2,7 +2,7 @@ const posts = [];
 
 const limitTitle = 10;
 const limitText = 20;
-const limitTitletMessage = `Длина заголовка не должна превышать ${limitTitle} символов`;
+const limitTitleMessage = `Длина заголовка не должна превышать ${limitTitle} символов`;
 const limitTextMessage = `Длина поста не должна превышать ${limitText} символов`;
 
 // достаем все нужные нам элементы из htmL
@@ -28,7 +28,7 @@ function validation() {
 
   if (titleLength > limitTitle) {
     validationMessage.className = "validationMessage";
-    validationMessage.innerText = limitTitletMessage;
+    validationMessage.innerText = limitTitleMessage;
     newPostBtnNode.disabled = true;
     return;
   } else {
