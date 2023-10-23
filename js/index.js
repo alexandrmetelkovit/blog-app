@@ -31,20 +31,17 @@ function validation() {
     validationMessage.innerText = limitTitleMessage;
     newPostBtnNode.disabled = true;
     return;
-  } else {
-    validationMessage.className = "validationMessage__hidden";
-    newPostBtnNode.disabled = false;
-  }
+  } 
 
   if (textLength > limitText) {
     validationMessage.className = "validationMessage";
     validationMessage.innerText = limitTextMessage;
     newPostBtnNode.disabled = true;
     return;
-  } else {
-    validationMessage.className = "validationMessage__hidden";
-    newPostBtnNode.disabled = false;
   }
+
+	validationMessage.className = "validationMessage__hidden";
+	newPostBtnNode.disabled = false;
 }
 
 function newPostBtnHandler() {
